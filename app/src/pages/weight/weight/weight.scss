@@ -1,3 +1,16 @@
 page-weight {
 
 }
+
+.toastError{
+  > div{
+    background-color:red!important;
+  }
+}
+
+.toastSuccess{
+  > div{
+    background-color:#32db64!important;
+  }
+}
+
