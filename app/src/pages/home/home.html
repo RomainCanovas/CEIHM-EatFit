@@ -15,8 +15,91 @@
 </ion-header>
 
 <ion-content padding>
-  salut
-  <p>
-    If you get lost, the <a href="http://ionicframework.com/docs/v2">docs</a> will be your guide.
-  </p>
+  <div class="rond" text-center>
+    <h1>2998</h1>
+    <p>KCal
+    <br/>consommées</p>
+  </div>
+
+  <div class="date-switch" text-center>
+    <ion-row class="row">
+      <button ion-button> <</button>
+      <p>Aujourd'hui</p>
+      <button ion-button> ></button>
+    </ion-row>
+  </div>
+
+  <div class="data" text-center>
+    <ion-row text-center>
+      <div col-4 class="elem">
+        <div class="l1">
+          Glucides
+        </div>
+        <div class="l2">
+          356g
+        </div>
+      </div>
+      <div col-4 class="elem">
+        <div class="l1">
+          Protéines
+        </div>
+        <div class="l2">
+          146g
+        </div>
+      </div>
+      <div col-4 class="elem">
+        <div class="l1">
+          Graisses
+        </div>
+        <div class="l2">
+          87g
+        </div>
+      </div>
+    </ion-row>
+  </div>
+  <ion-item-divider></ion-item-divider>
+
+  <ion-card>
+    <ion-list>
+      <ion-item>
+        <h2>Petit déjeuner<span class="detail">? / 1000 Kcal</span></h2>
+        <ion-row>
+          <h3 col-9>Non renseigné</h3>
+          <div col-3>
+            <ion-buttons>
+              <button ion-button icon-only>
+                <ion-icon name="add"></ion-icon>
+              </button>
+            </ion-buttons>
+          </div>
+        </ion-row>
+      </ion-item>
+      <ion-item>
+        <h2>Déjeuner<span class="detail">1730 / 2000 Kcal</span></h2>
+        <ion-row>
+          <h3 col-9>Coquillettes Jambon</h3>
+          <div col-3>
+            <ion-buttons>
+              <button ion-button icon-only>
+                <ion-icon name="options"></ion-icon>
+              </button>
+            </ion-buttons>
+          </div>
+        </ion-row>
+      </ion-item>
+      <ion-item>
+        <h2>Diner<span class="detail">870 / 950 Kcal</span></h2>
+        <ion-row>
+          <h3 col-9>Soupe au pistou</h3>
+          <div col-3>
+            <ion-buttons>
+              <button ion-button icon-only>
+                <ion-icon name="options"></ion-icon>
+              </button>
+            </ion-buttons>
+          </div>
+        </ion-row>
+      </ion-item>
+    </ion-list>
+  </ion-card>
 </ion-content>
