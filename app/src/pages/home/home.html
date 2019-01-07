@@ -15,28 +15,32 @@
 </ion-header>
 
 <ion-content padding>
+
   <div class="rond" text-center>
     <h1>2998</h1>
     <p>KCal
-    <br/>consommées</p>
+      <br/>consommées</p>
   </div>
 
   <div class="date-switch" text-center>
     <ion-row class="row">
-      <button ion-button> <</button>
-      <p>Aujourd'hui</p>
-      <button ion-button> ></button>
+      <div col-3></div>
+      <button col-1 ion-button icon-only><ion-icon name="ios-arrow-back"></ion-icon></button>
+      <p col-4>Aujourd'hui</p>
+      <button col-1 ion-button icon-only><ion-icon name="ios-arrow-forward"></ion-icon></button>
+      <div col-3></div>
     </ion-row>
   </div>
 
-  <div class="data" text-center>
-    <ion-row text-center>
+  <div class="data">
+    <ion-row>
       <div col-4 class="elem">
         <div class="l1">
           Glucides
         </div>
         <div class="l2">
           356g
+          <div class="badge" style="background-color: #db3b2d"></div>
         </div>
       </div>
       <div col-4 class="elem">
@@ -45,6 +49,7 @@
         </div>
         <div class="l2">
           146g
+          <div class="badge" style="background-color: #2ec95c"></div>
         </div>
       </div>
       <div col-4 class="elem">
@@ -53,19 +58,28 @@
         </div>
         <div class="l2">
           87g
+          <div class="badge" style="background-color: #d99930"></div>
         </div>
       </div>
     </ion-row>
   </div>
   <ion-item-divider></ion-item-divider>
 
+  <div text-center margin-top class="add">
+  <button ion-button icon-start>
+    <ion-icon name="add"></ion-icon>
+    Ajouter un repas
+      </button>
+  </div>
+
+
   <ion-card>
     <ion-list>
-      <ion-item>
+      <ion-item class="itm">
         <h2>Petit déjeuner<span class="detail">? / 1000 Kcal</span></h2>
         <ion-row>
           <h3 col-9>Non renseigné</h3>
-          <div col-3>
+          <div col-3 text-right>
             <ion-buttons>
               <button ion-button icon-only (click)="openAddMeal()">
                 <ion-icon name="add"></ion-icon>
@@ -74,11 +88,11 @@
           </div>
         </ion-row>
       </ion-item>
-      <ion-item>
+      <ion-item class="itm">
         <h2>Déjeuner<span class="detail">1730 / 2000 Kcal</span></h2>
         <ion-row>
           <h3 col-9>Coquillettes Jambon</h3>
-          <div col-3>
+          <div col-3 text-right>
             <ion-buttons>
               <button ion-button icon-only>
                 <ion-icon name="options"></ion-icon>
@@ -87,11 +101,11 @@
           </div>
         </ion-row>
       </ion-item>
-      <ion-item>
+      <ion-item class="itm">
         <h2>Diner<span class="detail">870 / 950 Kcal</span></h2>
         <ion-row>
           <h3 col-9>Soupe au pistou</h3>
-          <div col-3>
+          <div col-3 text-right>
             <ion-buttons>
               <button ion-button icon-only>
                 <ion-icon name="options"></ion-icon>
