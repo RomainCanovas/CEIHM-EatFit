@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import {StatsPage} from "../../stats/stats";
+import {AddMealScanPage} from "../add-meal-scan/add-meal-scan";
 
 /**
  * Generated class for the AddMealPage page.
@@ -20,6 +22,10 @@ export class AddMealPage {
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad AddMealPage');
+  }
+
+  openScan(){
+    this.navCtrl.push(AddMealScanPage);
   }
 
 }

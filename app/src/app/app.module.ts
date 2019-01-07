@@ -15,6 +15,7 @@ import {SharePage} from "../pages/share/share";
 import {StatsPage} from "../pages/stats/stats";
 import {WeightPage} from "../pages/weight/weight/weight";
 import {UpdateWeightPage} from "../pages/weight/update-weight/update-weight";
+import {BarcodeScanner} from '@ionic-native/barcode-scanner';
 
 @NgModule({
   declarations: [
@@ -51,6 +52,7 @@ import {UpdateWeightPage} from "../pages/weight/update-weight/update-weight";
   providers: [
     StatusBar,
     SplashScreen,
+    BarcodeScanner,
     {provide: ErrorHandler, useClass: IonicErrorHandler}
   ]
 })
