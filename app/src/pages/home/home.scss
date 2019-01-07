@@ -19,8 +19,30 @@ page-home {
   margin-top:unset !important;
 }
 
+.date-switch p{
+  font-size:17px;
+  vertical-align: middle;
+  margin:unset;
+  padding-top:13px;
+}
 
 
-.date-switch ion-row{
-  margin: 0 auto;
+.data{
+  margin-left:40px;
+}
+.l1{
+  text-transform: uppercase;
+  margin-bottom: 2px;
+}
+
+.l2{
+  text-align: left;
+}
+
+.data .badge{
+  width:15px;
+  height:15px;
+  border-radius: 50%;
+  float:right;
+  margin-right:40px;
 }

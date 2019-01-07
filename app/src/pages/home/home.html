@@ -15,28 +15,32 @@
 </ion-header>
 
 <ion-content padding>
+
   <div class="rond" text-center>
     <h1>2998</h1>
     <p>KCal
-    <br/>consommées</p>
+      <br/>consommées</p>
   </div>
 
   <div class="date-switch" text-center>
     <ion-row class="row">
-      <button ion-button> <</button>
-      <p>Aujourd'hui</p>
-      <button ion-button> ></button>
+      <div col-3></div>
+      <button col-1 ion-button icon-only><ion-icon name="ios-arrow-back"></ion-icon></button>
+      <p col-4>Aujourd'hui</p>
+      <button col-1 ion-button icon-only><ion-icon name="ios-arrow-forward"></ion-icon></button>
+      <div col-3></div>
     </ion-row>
   </div>
 
-  <div class="data" text-center>
-    <ion-row text-center>
+  <div class="data">
+    <ion-row>
       <div col-4 class="elem">
         <div class="l1">
           Glucides
         </div>
         <div class="l2">
           356g
+          <div class="badge" style="background-color: #db3b2d"></div>
         </div>
       </div>
       <div col-4 class="elem">
@@ -45,6 +49,7 @@
         </div>
         <div class="l2">
           146g
+          <div class="badge" style="background-color: #2ec95c"></div>
         </div>
       </div>
       <div col-4 class="elem">
@@ -53,11 +58,13 @@
         </div>
         <div class="l2">
           87g
+          <div class="badge" style="background-color: #d99930"></div>
         </div>
       </div>
     </ion-row>
   </div>
   <ion-item-divider></ion-item-divider>
+
 
   <ion-card>
     <ion-list>
