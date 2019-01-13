@@ -9,13 +9,14 @@ import { HomePage } from '../pages/home/home';
 import {AddMealPage} from "../pages/add-meal/add-meal/add-meal";
 import {AddMealDetailsPage} from "../pages/add-meal/add-meal-details/add-meal-details";
 import {AddMealListPage} from "../pages/add-meal/add-meal-list/add-meal-list";
-import {AddMealScanPage} from "../pages/add-meal/add-meal-scan/add-meal-scan";
+import {AddMealScanPage} from "../pages/add-meal/scan/add-meal-scan/add-meal-scan";
 import {AddMealVocalPage} from "../pages/add-meal/add-meal-vocal/add-meal-vocal";
 import {SharePage} from "../pages/share/share";
 import {StatsPage} from "../pages/stats/stats";
 import {WeightPage} from "../pages/weight/weight/weight";
 import {UpdateWeightPage} from "../pages/weight/update-weight/update-weight";
 import {BarcodeScanner} from '@ionic-native/barcode-scanner';
+import {ScanResultsPage} from "../pages/add-meal/scan/scan-results/scan-results";
 
 @NgModule({
   declarations: [
@@ -25,6 +26,7 @@ import {BarcodeScanner} from '@ionic-native/barcode-scanner';
     AddMealDetailsPage,
     AddMealListPage,
     AddMealScanPage,
+    ScanResultsPage,
     AddMealVocalPage,
     SharePage,
     StatsPage,
@@ -33,7 +35,7 @@ import {BarcodeScanner} from '@ionic-native/barcode-scanner';
   ],
   imports: [
     BrowserModule,
-    IonicModule.forRoot(MyApp),
+    IonicModule.forRoot(MyApp)
   ],
   bootstrap: [IonicApp],
   entryComponents: [
@@ -43,6 +45,7 @@ import {BarcodeScanner} from '@ionic-native/barcode-scanner';
     AddMealDetailsPage,
     AddMealListPage,
     AddMealScanPage,
+    ScanResultsPage,
     AddMealVocalPage,
     SharePage,
     StatsPage,

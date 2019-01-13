@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import {StatsPage} from "../../stats/stats";
-import {AddMealScanPage} from "../add-meal-scan/add-meal-scan";
+import {AddMealScanPage} from "../scan/add-meal-scan/add-meal-scan";
 
 /**
  * Generated class for the AddMealPage page.

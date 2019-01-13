@@ -1,0 +1,28 @@
+<!--
+  Generated template for the ScanResultsPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>scan-results</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+
+  <ion-row>
+    <ion-col style="text-align: center">
+      <img [src]=imgUrl>
+      <h2>{{name}}</h2>
+      <button ion-button (click)="openMealDetails()">Valider</button>
+      <div></div>
+      <button ion-button (click)="openScanPage()">Je me suis trompé de produit</button>
+    </ion-col>
+  </ion-row>
+
+</ion-content>
