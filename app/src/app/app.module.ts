@@ -17,6 +17,8 @@ import {WeightPage} from "../pages/weight/weight/weight";
 import {UpdateWeightPage} from "../pages/weight/update-weight/update-weight";
 import {BarcodeScanner} from '@ionic-native/barcode-scanner';
 import {ScanResultsPage} from "../pages/add-meal/scan/scan-results/scan-results";
+import { SpeechRecognition } from '@ionic-native/speech-recognition';
+
 
 @NgModule({
   declarations: [
@@ -35,7 +37,7 @@ import {ScanResultsPage} from "../pages/add-meal/scan/scan-results/scan-results"
   ],
   imports: [
     BrowserModule,
-    IonicModule.forRoot(MyApp)
+    IonicModule.forRoot(MyApp),
   ],
   bootstrap: [IonicApp],
   entryComponents: [
@@ -55,6 +57,7 @@ import {ScanResultsPage} from "../pages/add-meal/scan/scan-results/scan-results"
   providers: [
     StatusBar,
     SplashScreen,
+    SpeechRecognition,
     BarcodeScanner,
     {provide: ErrorHandler, useClass: IonicErrorHandler}
   ]

@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import {StatsPage} from "../../stats/stats";
 import {AddMealScanPage} from "../scan/add-meal-scan/add-meal-scan";
+import {AddMealVocalPage} from "../add-meal-vocal/add-meal-vocal";
 
 /**
  * Generated class for the AddMealPage page.
@@ -26,6 +27,10 @@ export class AddMealPage {
 
   openScan(){
     this.navCtrl.push(AddMealScanPage);
+  }
+
+  openVoice(){
+    this.navCtrl.push(AddMealVocalPage);
   }
 
 }
