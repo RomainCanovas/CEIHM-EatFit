@@ -3,6 +3,7 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import {StatsPage} from "../../stats/stats";
 import {AddMealScanPage} from "../scan/add-meal-scan/add-meal-scan";
 import {AddMealVocalPage} from "../add-meal-vocal/add-meal-vocal";
+import {AddMealListPage} from "../add-meal-list/add-meal-list";
 
 /**
  * Generated class for the AddMealPage page.
@@ -31,6 +32,10 @@ export class AddMealPage {
 
   openVoice(){
     this.navCtrl.push(AddMealVocalPage);
+  }
+  openList(){
+      this.navCtrl.push(AddMealListPage);
+
   }
 
 }

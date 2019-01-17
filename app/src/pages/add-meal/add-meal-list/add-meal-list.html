@@ -14,5 +14,71 @@
 
 
 <ion-content padding>
-
+  <p style="text-align: center; font-size: 20px;">Sélectionner les éléments du repas</p>
+  <ion-searchbar (ionInput)="getItems($event)"></ion-searchbar>
+  <ion-list>
+    <ion-item *ngFor="let item of selectedItems">
+      <ion-checkbox (click)="ajouterItem(item)" item-left></ion-checkbox>
+      <ion-label>{{ item }}</ion-label>
+    </ion-item>
+  </ion-list>
+  <ion-list>
+    <ion-list-header style="font-weight: bold; color: #7E7F81; background-color: #E0E1E3;">
+      <ion-icon name="restaurant" style="color: black; font-size: 20px;"></ion-icon> Entrées
+    </ion-list-header>
+    <ion-item *ngFor="let entree of entreesPossibles" detail-push>
+      <ion-checkbox (click)="ajouterItem(entree)" item-left></ion-checkbox>
+      <ion-label>{{ entree }}</ion-label>
+    </ion-item>
+    <ion-list-header style="font-weight: bold; color: #7E7F81; background-color: #E0E1E3;">
+      <ion-icon name="restaurant" style="color: black; font-size: 20px;"></ion-icon> Viandes
+    </ion-list-header>
+    <ion-item *ngFor="let viande of viandesPossibles" detail-push>
+      <ion-checkbox (click)="ajouterItem(viande)" item-left></ion-checkbox>
+      <ion-label>{{ viande }}</ion-label>
+    </ion-item>
+    <ion-list-header style="font-weight: bold; color: #7E7F81; background-color: #E0E1E3;">
+      <ion-icon name="restaurant" style="color: black; font-size: 20px;"></ion-icon> Fruits et légumes
+    </ion-list-header>
+    <ion-item *ngFor="let fl of fruitLegPossibles" detail-push>
+      <ion-checkbox (click)="ajouterItem(fl)" item-left></ion-checkbox>
+      <ion-label>{{ fl }}</ion-label>
+    </ion-item>
+    <ion-list-header style="font-weight: bold; color: #7E7F81; background-color: #E0E1E3;">
+      <ion-icon name="restaurant" style="color: black; font-size: 20px;"></ion-icon> Accompagnements
+    </ion-list-header>
+    <ion-item *ngFor="let acc of accompagnementsPossibles" detail-push>
+      <ion-checkbox (click)="ajouterItem(acc)" item-left></ion-checkbox>
+      <ion-label>{{ acc }}</ion-label>
+    </ion-item>
+    <ion-list-header style="font-weight: bold; color: #7E7F81; background-color: #E0E1E3;">
+      <ion-icon name="restaurant" style="color: black; font-size: 20px;"></ion-icon> Fromages
+    </ion-list-header>
+    <ion-item *ngFor="let fromage of fromagesPossibles" detail-push>
+      <ion-checkbox (click)="ajouterItem(fromage)" item-left></ion-checkbox>
+      <ion-label>{{ fromage }}</ion-label>
+    </ion-item>
+    <ion-list-header style="font-weight: bold; color: #7E7F81; background-color: #E0E1E3;">
+      <ion-icon name="restaurant" style="color: black; font-size: 20px;"></ion-icon> Plat préparés
+    </ion-list-header>
+    <ion-item *ngFor="let plat of platPrepares" detail-push>
+      <ion-checkbox (click)="ajouterItem(plat)" item-left></ion-checkbox>
+      <ion-label>{{ plat }}</ion-label>
+    </ion-item>
+    <ion-list-header style="font-weight: bold; color: #7E7F81; background-color: #E0E1E3;">
+      <ion-icon name="restaurant" style="color: black; font-size: 20px;"></ion-icon> Desserts
+    </ion-list-header>
+    <ion-item *ngFor="let dessert of dessertsPossibles" detail-push>
+      <ion-checkbox (click)="ajouterItem(dessert)" item-left></ion-checkbox>
+      <ion-label>{{ dessert }}</ion-label>
+    </ion-item>
+    <ion-list-header style="font-weight: bold; color: #7E7F81; background-color: #E0E1E3;">
+      <ion-icon name="wine" style="color: black; font-size: 20px;"></ion-icon> Boissons
+    </ion-list-header>
+    <ion-item *ngFor="let boisson of boissonsPossibles" detail-push>
+      <ion-checkbox (click)="ajouterItem(boisson)" item-left></ion-checkbox>
+      <ion-label>{{ boisson }}</ion-label>
+    </ion-item>
+  </ion-list>
+  <button ion-button (click)="valider()" style="display: block; margin : auto;">OK</button>
 </ion-content>
