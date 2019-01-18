@@ -27,7 +27,7 @@ export class AddMealPage {
   }
 
   openScan(){
-    this.navCtrl.push(AddMealScanPage);
+    this.navCtrl.push(AddMealScanPage, {names: [], imgsUrl: []});
   }
 
   openVoice(){

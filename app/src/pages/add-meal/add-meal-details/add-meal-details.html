@@ -1,33 +1,44 @@
 <ion-header>
 
-    <ion-navbar>
-        <ion-title>add-meal-details</ion-title>
-    </ion-navbar>
+  <ion-navbar color="primary">
+    <ion-title>Détails</ion-title>
+  </ion-navbar>
 
 </ion-header>
 
 
 <ion-content padding>
-    <h1 style="text-align: center; font-weight: bold">DETAILS DU REPAS</h1>
-    <ion-list>
-        <ion-item *ngFor="let n of name; let i = index">
-            <ion-icon name="square" style="color: black; font-size: 20px;"></ion-icon>
-            {{ n }}
-            <div class="weight-selector" text-center>
-                <ion-row class="row">
-                    <div col-3></div>
-                    <button col-1 ion-button icon-only (click)="decreaseWeight(i)" style="background-color: white;">
-                        <ion-icon name="remove"
-                                  style="color: black; font-size: 20px; border: 10px black; font-weight: bold"></ion-icon>
-                    </button>
-                    <p col-4>{{weight[i]}} g</p>
-                    <button col-1 ion-button icon-only (click)="increaseWeight(i)" style="background-color: white;">
-                        <ion-icon name="add"
-                                  style="color: black; font-size: 20px; border: 10px black; font-weight: bold"></ion-icon>
-                    </button>
-                    <div col-3></div>
-                </ion-row>
-            </div>
-        </ion-item>
-    </ion-list>
-    <img src="assets/imgs/chart.png">
+  <h1 style="text-align: center; font-weight: bold">DETAILS DU REPAS</h1>
+  <ion-list>
+    <ion-item *ngFor="let n of name; let i = index">
+      <ion-icon name="square" style="color: black; font-size: 20px;"></ion-icon>
+      {{ n }}
+      <div class="weight-selector" text-center>
+        <ion-row class="row">
+          <div col-3></div>
+          <button col-1 ion-button icon-only (click)="decreaseWeight(i)" style="background-color: white;">
+            <ion-icon name="remove"
+                      style="color: black; font-size: 20px; border: 10px black; font-weight: bold"></ion-icon>
+          </button>
+          <p col-4>{{weight[i]}} g</p>
+          <button col-1 ion-button icon-only (click)="increaseWeight(i)" style="background-color: white;">
+            <ion-icon name="add"
+                      style="color: black; font-size: 20px; border: 10px black; font-weight: bold"></ion-icon>
+          </button>
+          <div col-3></div>
+        </ion-row>
+      </div>
+    </ion-item>
+  </ion-list>
+  <img src="assets/imgs/chart.png">
+</ion-content>
+
+<ion-footer>
+  <ion-toolbar>
+    <ion-row>
+      <ion-col style="text-align: center">
+        <button ion-button (click)="goToRoot()">Retour à l'accueil</button>
+      </ion-col>
+    </ion-row>
+  </ion-toolbar>
+</ion-footer>

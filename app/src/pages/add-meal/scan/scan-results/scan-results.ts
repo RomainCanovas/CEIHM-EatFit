@@ -18,12 +18,13 @@ import {AddMealScanPage} from "../add-meal-scan/add-meal-scan";
 })
 export class ScanResultsPage {
 
-  private name: string;
-  private imgUrl: string;
+  private names = [];
+  private imgsUrl = [];
+  private repas = [];
 
   constructor(public navCtrl: NavController, public navParams: NavParams) {
-    this.name=navParams.get("name");
-    this.imgUrl=navParams.get("imgUrl");
+    this.names=navParams.get("names");
+    this.imgsUrl=navParams.get("imgsUrl");
   }
 
   ionViewDidLoad() {
@@ -31,11 +32,19 @@ export class ScanResultsPage {
   }
 
   openMealDetails() {
-    this.navCtrl.push(AddMealDetailsPage);
+    for(var i=0;i<this.names.length;i++) {
+      this.repas.push(this.names[i]);
+    }
+    this.navCtrl.push(AddMealDetailsPage, {tab: this.repas});
+  }
+
+  deleteItem(index){
+    this.names.splice(index, 1);
+    this.imgsUrl.splice(index, 1);
   }
 
   openScanPage() {
-    this.navCtrl.push(AddMealScanPage);
+    this.navCtrl.push(AddMealScanPage, {names: this.names, imgsUrl:this.imgsUrl});
   }
 
 }

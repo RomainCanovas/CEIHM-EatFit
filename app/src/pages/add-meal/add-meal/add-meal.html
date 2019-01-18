@@ -6,36 +6,55 @@
 -->
 <ion-header>
 
-  <ion-navbar>
-    <ion-title>add-meal</ion-title>
+  <ion-navbar color="primary">
+    <ion-title>Ajouter un repas</ion-title>
   </ion-navbar>
 
 </ion-header>
 
 
 <ion-content padding>
-  <h1>Ajouter un repas</h1>
-  <p>Sélectionnez une méthode pour indiquer les informations du repas</p>
   <ion-grid>
     <ion-row>
-      <ion-col>
-        <div>
-          <ion-icon name="mic" (click)="openVoice()"></ion-icon>
-          <p>Dictée</p>
-        </div>
-      </ion-col>
-      <ion-col>
-        <div>
-          <ion-icon name="list" (click)="openList()"></ion-icon>
-          <p>Manuellement</p>
-        </div>
-      </ion-col>
-      <ion-col>
-        <div (click)="openScan()">
-          <ion-icon name="barcode"></ion-icon>
-          <p>Scan</p>
-        </div>
+      <ion-col style="text-align: center">
+        <p>Sélectionnez une méthode pour indiquer les informations du repas</p>
       </ion-col>
     </ion-row>
+    <button margin-top="200"
+            (click)="openVoice()"
+            style="background-color: white;
+            border-radius: 4px;
+            box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);">
+      <ion-row>
+        <ion-col style="text-align: center">
+          <ion-icon name="mic" style="font-size: 40px;"></ion-icon>
+          <p>Dictée</p>
+        </ion-col>
+      </ion-row>
+    </button>
+    <button margin-top="200"
+            (click)="openList()"
+            style="background-color: white;
+            border-radius: 4px;
+            box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);">
+      <ion-row>
+        <ion-col style="text-align: center">
+          <ion-icon name="list" style="font-size: 40px;"></ion-icon>
+          <p>Manuellement</p>
+        </ion-col>
+      </ion-row>
+    </button>
+    <button margin-top="200"
+            (click)="openScan()"
+            style="background-color: white;
+            border-radius: 4px;
+            box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);">
+      <ion-row>
+        <ion-col style="text-align: center">
+          <ion-icon name="barcode" style="font-size: 40px;"></ion-icon>
+          <p>Scan</p>
+        </ion-col>
+      </ion-row>
+    </button>
   </ion-grid>
 </ion-content>

@@ -19,21 +19,28 @@ import {ScanResultsPage} from "../scan-results/scan-results";
 })
 export class AddMealScanPage {
 
+  private names = [];
+  private imgsUrl = [];
+
   constructor(public navCtrl: NavController,
               public navParams: NavParams,
               private barcodeScanner: BarcodeScanner) {
+    this.names=navParams.get("names");
+    this.imgsUrl=navParams.get("imgsUrl");
   }
 
 
   getProductInfo(barcode) {
     let req = new XMLHttpRequest();
-    req.open("GET", "https://fr.openfoodfacts.org/api/v0/produit/" + barcode + ".json", false);
+    req.open("GET", "https://fr.openfoodfacts.org/api/v0/produit/" + barcode.text + ".json" , false);
     req.send(null);
     let jsonResult = JSON.parse(req.responseText);
     let name = jsonResult.product.product_name;
     let imgUrl = jsonResult.product.image_url;
+    this.names.push(name);
+    this.imgsUrl.push(imgUrl);
     this.navCtrl.pop();
-    this.navCtrl.push(ScanResultsPage, { name: name, imgUrl: imgUrl });
+    this.navCtrl.push(ScanResultsPage, { names: this.names, imgsUrl: this.imgsUrl });
   }
 
   ionViewDidLoad() {

@@ -6,23 +6,45 @@
 -->
 <ion-header>
 
-  <ion-navbar>
-    <ion-title>scan-results</ion-title>
+  <ion-navbar color="primary">
+    <ion-title>Scan</ion-title>
   </ion-navbar>
 
 </ion-header>
 
 
 <ion-content padding>
-
-  <ion-row>
-    <ion-col style="text-align: center">
-      <img [src]=imgUrl>
-      <h2>{{name}}</h2>
-      <button ion-button (click)="openMealDetails()">Valider</button>
-      <div></div>
-      <button ion-button (click)="openScanPage()">Je me suis trompé de produit</button>
-    </ion-col>
-  </ion-row>
-
+  <ion-grid>
+    <ion-row>
+      <ion-col style="text-align: center">
+        <ion-list>
+          <ion-card *ngFor="let name of names; let i = index">
+            <ion-item>
+              <img [src]=imgsUrl[i]>
+              <h2 style="text-align: center">{{name}}</h2>
+            </ion-item>
+            <ion-row>
+              <ion-col>
+                <button ion-button icon-start clear (click)="deleteItem()">
+                  <ion-icon name="trash"></ion-icon>
+                </button>
+              </ion-col>
+            </ion-row>
+          </ion-card>
+        </ion-list>
+        <button ion-fab (click)="openScanPage()">Button</button>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
 </ion-content>
+
+<ion-footer>
+  <ion-toolbar>
+    <ion-row>
+      <ion-col style="text-align: center">
+        <button ion-button (click)="openMealDetails()">Valider</button>
+      </ion-col>
+    </ion-row>
+  </ion-toolbar>
+</ion-footer>
+

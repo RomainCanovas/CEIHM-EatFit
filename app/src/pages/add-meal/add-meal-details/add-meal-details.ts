@@ -1,3 +1,5 @@
+import {HomePage} from "../../home/home";
+
 declare var require: any
 import {Component} from '@angular/core';
 import {IonicPage, NavController, NavParams} from 'ionic-angular';
@@ -29,6 +31,10 @@ export class AddMealDetailsPage {
 
     increaseWeight(i){
         this.weight[i] = this.weight[i]+5;
+    }
+
+    goToRoot(){
+      this.navCtrl.setRoot(HomePage);
     }
 
 
