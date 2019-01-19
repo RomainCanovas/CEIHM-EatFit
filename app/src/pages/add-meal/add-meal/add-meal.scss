@@ -1,3 +1,30 @@
 page-add-meal {
 
+  .intro {
+    font-size:15px;
+    text-align: center;
+    color:#272727;
+    margin: 10px 10px 25px;
+  }
+  
+  .btn{
+    text-align: center;
+    margin:0 auto;
+
+    p{
+      font-weight: 500;
+      text-transform: uppercase;
+    }
+
+
+    ion-icon{
+      color: #1b4964;
+      border: solid 3.5px #468189;
+      width:60px;
+      height:60px;
+      border-radius:10px;
+      padding:5px;
+    }
+  }
+
 }

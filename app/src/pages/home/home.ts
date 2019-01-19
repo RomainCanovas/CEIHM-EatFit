@@ -3,12 +3,13 @@ import {AlertController, NavController} from 'ionic-angular';
 import {WeightPage} from "../weight/weight/weight";
 import {StatsPage} from "../stats/stats";
 import {AddMealPage} from "../add-meal/add-meal/add-meal";
-
 @Component({
   selector: 'page-home',
   templateUrl: 'home.html'
 })
 export class HomePage {
+
+  addClick = false;
 
   constructor(public navCtrl: NavController, public alertCtrl: AlertController) {
 
@@ -20,11 +21,13 @@ export class HomePage {
   }
 
   openAddMeal() {
+    this.addClick = false;
     this.navCtrl.push(AddMealPage);
   }
 
   openAddMealChoicePicker(){
-    this.advanceSearch();
+    this.addClick = true;
+    //this.advanceSearch();
   }
 
   advanceSearch(): void

@@ -19,6 +19,11 @@ import {AddMealListPage} from "../add-meal-list/add-meal-list";
 })
 export class AddMealPage {
 
+  showVoiceHelp = false;
+  showListHelp = false;
+  showScanHelp = false;
+
+
   constructor(public navCtrl: NavController, public navParams: NavParams) {
   }
 
@@ -35,7 +40,25 @@ export class AddMealPage {
   }
   openList(){
       this.navCtrl.push(AddMealListPage);
+  }
 
+
+  voiceHelp(){
+    this.showVoiceHelp = true;
+    this.showListHelp = false;
+    this.showScanHelp = false;
+  }
+
+  listHelp(){
+    this.showVoiceHelp = false;
+    this.showListHelp = true;
+    this.showScanHelp = false;
+  }
+
+  scanHelp(){
+    this.showVoiceHelp = false;
+    this.showListHelp = false;
+    this.showScanHelp = true;
   }
 
 }

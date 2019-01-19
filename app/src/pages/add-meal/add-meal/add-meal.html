@@ -14,47 +14,53 @@
 
 
 <ion-content padding>
-  <ion-grid>
-    <ion-row>
-      <ion-col style="text-align: center">
-        <p>Sélectionnez une méthode pour indiquer les informations sur le repas</p>
-      </ion-col>
-    </ion-row>
-    <button margin-top="200"
-            (click)="openVoice()"
-            style="background-color: white;
-            border-radius: 4px;
-            box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);">
-      <ion-row>
-        <ion-col style="text-align: center">
-          <ion-icon name="mic" style="font-size: 40px;"></ion-icon>
-          <p>Dictée</p>
-        </ion-col>
-      </ion-row>
-    </button>
-    <button margin-top="200"
-            (click)="openList()"
-            style="background-color: white;
-            border-radius: 4px;
-            box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);">
-      <ion-row>
-        <ion-col style="text-align: center">
-          <ion-icon name="list" style="font-size: 40px;"></ion-icon>
-          <p>Manuellement</p>
-        </ion-col>
-      </ion-row>
-    </button>
-    <button margin-top="200"
-            (click)="openScan()"
-            style="background-color: white;
-            border-radius: 4px;
-            box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);">
-      <ion-row>
-        <ion-col style="text-align: center">
-          <ion-icon name="barcode" style="font-size: 40px;"></ion-icon>
-          <p>Scan</p>
-        </ion-col>
-      </ion-row>
-    </button>
-  </ion-grid>
+  <div class="intro">
+    <i>Garder appuyer une des icônes pour obtenir plus d'informations</i>
+  </div>
+  <ion-row>
+    <div col-3 class="btn" (tap)="openVoice()" (press)="voiceHelp()">
+      <ion-icon name="mic" style="font-size: 40px;"></ion-icon>
+      <p>Dictée</p>
+    </div>
+    <div col-3 class="btn" (tap)="openList()" (press)="listHelp()">
+      <ion-icon name="list" style="font-size: 40px;"></ion-icon>
+      <p>Liste</p>
+    </div>
+    <div col-3 class="btn" (tap)="openScan()" (press)="scanHelp()">
+      <ion-icon name="barcode" style="font-size: 40px;"></ion-icon>
+      <p>Scan</p>
+    </div>
+  </ion-row>
+
+  <ion-card *ngIf="showVoiceHelp">
+    <ion-card-header>
+      Dictée vocale
+    </ion-card-header>
+    <ion-card-content text-justify>
+      Racontez votre repas au micro, et l'intelligence artificielle s'occupe du reste !
+      Le système est capable de reconnaître les aliments
+      et les proportions que vous décrivez.
+    </ion-card-content>
+  </ion-card>
+
+  <ion-card *ngIf="showListHelp">
+    <ion-card-header>
+      Liste d'aliments
+    </ion-card-header>
+    <ion-card-content>
+      Parcourez une liste complète d'aliments pour décrire avec précision votre repas.
+    </ion-card-content>
+  </ion-card>
+
+  <ion-card *ngIf="showScanHelp">
+    <ion-card-header>
+      Scan de code-barre
+    </ion-card-header>
+    <ion-card-content>
+      Utiliser cette méthode permet de détecter automatiquement l'aliment scanné.
+    </ion-card-content>
+  </ion-card>
+
+
+
 </ion-content>
