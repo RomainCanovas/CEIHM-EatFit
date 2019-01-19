@@ -33,9 +33,6 @@ export class AddMealListPage {
         this.initializeItems();
     }
 
-    ionViewDidLoad() {
-        console.log('ionViewDidLoad AddMealListPage');
-    }
 
     ajouterItem(item) {
         let index = this.repas.indexOf(item);
@@ -51,6 +48,7 @@ export class AddMealListPage {
         let data = {
             tab: this.repas
         };
+        console.log(data)
         this.navCtrl.push(AddMealDetailsPage, data)
     }
 

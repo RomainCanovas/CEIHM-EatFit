@@ -21,9 +21,6 @@ export class AddMealDetailsPage {
     console.log(this.weight);
   }
 
-  ionViewDidLoad() {
-    console.log('ionViewDidLoad AddMealDetailsPage');
-  }
 
   decreaseWeight(i) {
     this.weight[i] = this.weight[i] - 5;
