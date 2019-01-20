@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import {SharePage} from "../share/share";
+import {HomePage} from "../home/home";
 
 /**
  * Generated class for the StatsPage page.
@@ -18,8 +20,13 @@ export class StatsPage {
   constructor(public navCtrl: NavController, public navParams: NavParams) {
   }
 
-  ionViewDidLoad() {
-    console.log('ionViewDidLoad StatsPage');
+  share(){
+    this.navCtrl.push(SharePage);
   }
+
+  home(){
+    this.navCtrl.push(HomePage);
+  }
+
 
 }

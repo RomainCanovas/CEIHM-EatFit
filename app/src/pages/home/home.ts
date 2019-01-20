@@ -10,9 +10,10 @@ import {AddMealPage} from "../add-meal/add-meal/add-meal";
 export class HomePage {
 
   addClick = false;
+  kcal = 2988;
 
   constructor(public navCtrl: NavController, public alertCtrl: AlertController) {
-
+    this.kcal = this.getRandom(1000,3000)
   }
 
 
@@ -28,6 +29,10 @@ export class HomePage {
   openAddMealChoicePicker(){
     this.addClick = true;
     //this.advanceSearch();
+  }
+
+  getRandom(min,max){
+    return Math.floor(Math.random() * (max - min + 1)) + min;
   }
 
   advanceSearch(): void
@@ -67,6 +72,7 @@ export class HomePage {
   }
 
   openStats(){
+    console.log("yo")
     this.navCtrl.push(StatsPage)
   }
 

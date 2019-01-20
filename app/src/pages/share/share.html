@@ -7,12 +7,106 @@
 <ion-header>
 
   <ion-navbar>
-    <ion-title>share</ion-title>
+    <ion-title>Partager votre suivi</ion-title>
   </ion-navbar>
 
 </ion-header>
 
 
 <ion-content padding>
+
+  <div class="header">
+    Sélectionner une période
+  </div>
+  <ion-row>
+    <div col-4 class="period">
+      <button ion-button round>
+        Cette semaine
+      </button>
+    </div>
+    <div col-4 class="period">
+      <button ion-button round>
+        Ce mois
+      </button>
+    </div>
+    <div col-4 class="period">
+      <button ion-button round>
+        Personnalisé
+      </button>
+    </div>
+  </ion-row>
+  <div class="header">
+    Sélectionner les donnnées à inclure :
+  </div>
+  <div class="data">
+    <div class="lne">
+      <ion-checkbox></ion-checkbox>
+      Données nutritionnelles
+    </div>
+    <div class="lne">
+      <ion-checkbox></ion-checkbox>
+      Données liées au poids
+    </div>
+    <div class="lne">
+      <ion-checkbox></ion-checkbox>
+      Données de l'alimentation
+    </div>
+  </div>
+
+  <div class="preview" text-center>
+    <button ion-button icon-only>
+      <ion-icon name="eye"></ion-icon>
+    </button>
+    <p> Aperçu</p>
+  </div>
+
+  <div class="header">
+    Envoyer par ...
+  </div>
+
+  <table text-center>
+    <tr>
+      <td>
+        <button ion-button icon-only>
+          <ion-icon name="mail"></ion-icon>
+        </button>
+        <p> Mail</p>
+      </td>
+      <td>
+        <button ion-button icon-only>
+          <ion-icon name="logo-facebook"></ion-icon>
+        </button>
+        <p> Facebook</p>
+      </td>
+      <td>
+        <button ion-button icon-only>
+          <ion-icon name="logo-linkedin"></ion-icon>
+        </button>
+        <p> Linkedin</p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <button ion-button icon-only>
+          <ion-icon name="logo-twitter"></ion-icon>
+        </button>
+        <p> Twitter</p>
+      </td>
+      <td>
+        <button ion-button icon-only>
+          <ion-icon name="logo-googleplus"></ion-icon>
+        </button>
+        <p> Google +</p>
+      </td>
+      <td>
+        <button ion-button icon-only>
+          <ion-icon name="logo-snapchat"></ion-icon>
+        </button>
+        <p> Snapchat</p>
+      </td>
+    </tr>
+
+  </table>
+
 
 </ion-content>

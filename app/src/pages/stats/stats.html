@@ -6,13 +6,163 @@
 -->
 <ion-header>
 
-  <ion-navbar>
-    <ion-title>stats</ion-title>
-  </ion-navbar>
-
+  <ion-toolbar color="primary">
+    <ion-row>
+      <button ion-button icon-only color="royal" class="yo" (click)="home()">
+        <ion-icon name="home"></ion-icon>
+      </button>
+      <ion-title text-center>Statistiques</ion-title>
+      <button ion-button icon-only color="royal" (click)="share()" class="yo">
+        <ion-icon name="share"></ion-icon>
+      </button>
+    </ion-row>
+  </ion-toolbar>
 </ion-header>
 
 
 <ion-content padding>
+
+  <ion-card>
+    <ion-card-header>
+      <ion-row>
+        <div col-8>
+          Progrès journalier
+        </div>
+        <div col-4>
+          <select>
+            <option selected>kcal / day</option>
+            <option selected>kcal / week</option>
+          </select>
+        </div>
+      </ion-row>
+    </ion-card-header>
+
+    <ion-card-content>
+      inserer graph
+
+      <div class="swap" text-center>
+        <button ion-button clear icon-only color="secondary">
+          <ion-icon name="ios-arrow-back"></ion-icon>
+        </button>
+        <span>30 derniers jours</span>
+        <button ion-button clear icon-only color="secondary">
+          <ion-icon name="ios-arrow-forward"></ion-icon>
+        </button>
+      </div>
+
+    </ion-card-content>
+  </ion-card>
+
+  <ion-card class="conso">
+    <ion-card-header>
+      Consommation
+    </ion-card-header>
+    <ion-card-content>
+      <div class="obj">
+        <span>Objectif</span> : suivre une bonne alimentation
+      </div>
+
+      <div class="line">
+        <ion-row style="color: #7d9bc3">
+          <div col-4 class="name">
+            Glucides
+          </div>
+          <div col-8 class="amount">
+            900 restants / 3200
+          </div>
+        </ion-row>
+        <ion-row class="progress">
+          <span col-3 style="background-color: #99bdee">
+          </span>
+          <span col-9 style="background-color: #b9d3f8">
+          </span>
+        </ion-row>
+      </div>
+
+      <div class="line">
+        <ion-row style="color: #7fa5e2">
+          <div col-4 class="name">
+            Protéines
+          </div>
+          <div col-8 class="amount">
+            1400 restants / 2900
+          </div>
+        </ion-row>
+        <ion-row class="progress">
+          <span col-6 style="background-color: #7fa5e2">
+          </span>
+          <span col-6 style="background-color: #abc4e6">
+          </span>
+        </ion-row>
+      </div>
+
+      <div class="line">
+        <ion-row style="color: #708aae">
+          <div col-4 class="name">
+            Graisses
+          </div>
+          <div col-8 class="amount">
+            700 restants / 2000
+          </div>
+        </ion-row>
+        <ion-row class="progress">
+          <span col-7 style="background-color: #597eaa">
+          </span>
+          <span col-5 style="background-color: #9bb1d0">
+          </span>
+        </ion-row>
+      </div>
+
+      <div class="line">
+        <ion-row style="color: #3a6d94">
+          <div col-4 class="name">
+            Calories (KCAL)
+          </div>
+          <div col-8 class="amount">
+            120 restants / 2000
+          </div>
+        </ion-row>
+        <ion-row class="progress">
+          <span col-11 style="background-color: #3a6d94">
+          </span>
+          <span col-1 style="background-color: #8ca1bc">
+          </span>
+        </ion-row>
+      </div>
+
+
+    </ion-card-content>
+
+  </ion-card>
+
+  <ion-card>
+    <ion-card-header>
+      Bilan
+    </ion-card-header>
+
+    <ion-card-content  class="bilan">
+      <ion-row>
+        <div col-9>
+
+      <ion-row>
+        <div class="badge" style="background-color: #229645"></div>
+        <div class="t">Progression constante</div>
+      </ion-row>
+      <ion-row>
+        <div class="badge" style="background-color: #229645"></div>
+        <div class="t" >85% des repas renseignés</div>
+      </ion-row>
+      <ion-row>
+        <div class="badge" style="background-color: #f2ab36"></div>
+        <div class="t">Ne pas oublier les protéines</div>
+      </ion-row>
+        </div>
+        <div col-3>
+          <img class="rr" src="https://cdn4.iconfinder.com/data/icons/game-general-icon-set-1/512/trophy-512.png"/>
+        </div>
+
+      </ion-row>
+    </ion-card-content>
+  </ion-card>
 
 </ion-content>
