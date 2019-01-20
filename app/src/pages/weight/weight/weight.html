@@ -16,16 +16,29 @@
 <ion-content padding>
 
   <div>
-    div for the future graph
+    <section class="chart-wrapper">
+      <canvas #lineChart></canvas>
+    </section>
   </div>
 
-  <div>
-    div for the multiple indicators
+  <div class="weightContainer">
+    {{text}} kg
+  </div>
+
+  <div class="indicationContainer">
+    <div class="indication">
+      <div class="colorIndic" style="background-color: #2ec95c"></div>
+      Maintien régulier du poids
+    </div>
+    <div class="indication">
+      <div class="colorIndic" style="background-color: #d99930"></div>
+      5 mises à jour du poids ce mois-ci
+    </div>
   </div>
 
   <div text-center>
-    <button ion-button icon-start (click)="showWeight()">
-      <ion-icon name="add-circle"></ion-icon>
+    <button ion-button icon-start (click)="showWeight()" round>
+      <ion-icon name="add"></ion-icon>
       Mettre à jour mon poids
     </button>
   </div>

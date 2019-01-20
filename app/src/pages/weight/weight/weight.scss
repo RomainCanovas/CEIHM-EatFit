@@ -14,3 +14,34 @@ page-weight {
   }
 }
 
+.indication{
+  text-align: left;
+}
+
+.indicationContainer{
+  margin-top: 4vh;
+  margin-bottom: 4vh;
+}
+
+.weightContainer{
+  font-size: 2em;
+  font-weight: bold;
+  text-align: right;
+  margin-right: 2vw;
+  margin-top: 1vh;
+}
+
+.colorIndic{
+  width:15px;
+  height:15px;
+  border-radius: 50%;
+  float:left;
+  margin-right: 2.5vw;
+  margin-left: 5vw;
+}
+
+.chart-wrapper {
+  width: 100%;
+  display: inline-block;
+}
+
