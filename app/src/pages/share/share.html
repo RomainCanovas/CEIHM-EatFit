@@ -20,21 +20,22 @@
   </div>
   <ion-row>
     <div col-4 class="period">
-      <button ion-button round>
+      <button>
         Cette semaine
       </button>
     </div>
     <div col-4 class="period">
-      <button ion-button round>
+      <button>
         Ce mois
       </button>
     </div>
     <div col-4 class="period">
-      <button ion-button round>
+      <button>
         Personnalisé
       </button>
     </div>
   </ion-row>
+  <div class="separator"></div>
   <div class="header">
     Sélectionner les donnnées à inclure :
   </div>
@@ -60,6 +61,7 @@
     <p> Aperçu</p>
   </div>
 
+  <div class="separator"></div>
   <div class="header">
     Envoyer par ...
   </div>
@@ -67,19 +69,19 @@
   <table text-center>
     <tr>
       <td>
-        <button ion-button icon-only>
+        <button  (click)="goHome()">
           <ion-icon name="mail"></ion-icon>
         </button>
         <p> Mail</p>
       </td>
       <td>
-        <button ion-button icon-only>
+        <button (click)="goHome()">
           <ion-icon name="logo-facebook"></ion-icon>
         </button>
         <p> Facebook</p>
       </td>
       <td>
-        <button ion-button icon-only>
+        <button  (click)="goHome()">
           <ion-icon name="logo-linkedin"></ion-icon>
         </button>
         <p> Linkedin</p>
@@ -87,19 +89,19 @@
     </tr>
     <tr>
       <td>
-        <button ion-button icon-only>
+        <button  (click)="goHome()">
           <ion-icon name="logo-twitter"></ion-icon>
         </button>
         <p> Twitter</p>
       </td>
       <td>
-        <button ion-button icon-only>
+        <button (click)="goHome()">
           <ion-icon name="logo-googleplus"></ion-icon>
         </button>
         <p> Google +</p>
       </td>
       <td>
-        <button ion-button icon-only>
+        <button (click)="goHome()">
           <ion-icon name="logo-snapchat"></ion-icon>
         </button>
         <p> Snapchat</p>

@@ -36,40 +36,52 @@
   </div>
 
   <div class="data">
-    <ion-row>
-      <div col-4 class="elem">
-        <div class="l1">
-          Glucides
-        </div>
-        <div class="l2">
-          356g
-          <div class="badge" style="background-color: #db3b2d"></div>
-        </div>
-      </div>
-      <div col-4 class="elem">
-        <div class="l1">
-          Protéines
-        </div>
-        <div class="l2">
-          146g
-          <div class="badge" style="background-color: #229645"></div>
-        </div>
-      </div>
-      <div col-4 class="elem">
-        <div class="l1">
-          Graisses
-        </div>
-        <div class="l2">
-          87g
-          <div class="badge" style="background-color: #f2ab36"></div>
-        </div>
-      </div>
-    </ion-row>
+
+    <table>
+      <tr>
+        <td>
+          <div class="elem">
+            <div class="l1">
+              Glucides
+            </div>
+            <div class="l2">
+              356g
+              <div class="badge" style="background-color: #db3b2d"></div>
+            </div>
+          </div>
+        </td>
+        <td>
+          <div class="elem">
+            <div class="l1">
+              Protéines
+            </div>
+            <div class="l2">
+              280g
+              <div class="badge" style="background-color: #229645"></div>
+            </div>
+          </div>
+        </td>
+        <td>
+          <div class="elem">
+            <div class="l1">
+              Graisses
+            </div>
+            <div class="l2">
+              87g
+              <div class="badge" style="background-color: #f2ab36"></div>
+            </div>
+          </div>
+        </td>
+      </tr>
+
+    </table>
+
   </div>
   <ion-item-divider></ion-item-divider>
 
   <div text-center margin-top class="add">
-    <button ion-button icon-start (click)="openAddMealChoicePicker()" round color="primary" class="pop"[style.visibility]="addClick ? 'hidden' : 'visible'">
+    <button ion-button icon-start (click)="openAddMealChoicePicker()" round color="primary" class="pop"
+            [style.visibility]="addClick ? 'hidden' : 'visible'">
       <ion-icon name="add"></ion-icon>
       Ajouter un repas
     </button>
@@ -106,7 +118,7 @@
           <h3 col-9>Non renseigné</h3>
           <div col-3 text-right>
             <ion-buttons>
-              <button ion-button icon-only (click)="openAddMeal()" round color="secondary"  class="pop">
+              <button ion-button icon-only (click)="openAddMeal()" round color="secondary" class="pop">
                 <ion-icon name="add"></ion-icon>
               </button>
             </ion-buttons>

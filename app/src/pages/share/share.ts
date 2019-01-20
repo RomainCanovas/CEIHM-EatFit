@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import {IonicPage, NavController, NavParams, ToastController} from 'ionic-angular';
+import {HomePage} from "../home/home";
 
 /**
  * Generated class for the SharePage page.
@@ -15,11 +16,18 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 })
 export class SharePage {
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  constructor(public navCtrl: NavController, public navParams: NavParams,
+              private toastCtrl: ToastController) {
   }
 
-  ionViewDidLoad() {
-    console.log('ionViewDidLoad SharePage');
+
+  goHome(){
+    this.navCtrl.push(HomePage);
+    this.toastCtrl.create({
+      message: 'Le suivi a été partagé.',
+      duration: 3000,
+      position: 'bottom'
+    }).present();
   }
 
 }

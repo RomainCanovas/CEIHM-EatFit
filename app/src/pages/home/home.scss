@@ -72,8 +72,9 @@
 }
 
 
-.data{
-  margin-left:40px;
+.data table{
+  width:100%;
+  text-align: center;
 }
 .l1{
   text-transform: uppercase;
@@ -85,15 +86,17 @@
 }
 
 .l2{
-  text-align: left;
+  text-align: right;
+  margin-right:15px;
+
 }
 
 .data .badge{
   width:15px;
   height:15px;
   border-radius: 50%;
-  float:right;
-  margin-right:40px;
+  display:inline-block;
+  text-align: right;
 }
 
 
