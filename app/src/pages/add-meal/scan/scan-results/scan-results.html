@@ -19,20 +19,24 @@
       <ion-col style="text-align: center">
         <ion-list>
           <ion-card *ngFor="let name of names; let i = index">
-            <ion-item>
-              <img [src]=imgsUrl[i]>
-              <h2 style="text-align: center">{{name}}</h2>
-            </ion-item>
+            <img margin-top="5px" style="object-fit: cover; width:170px; height:170px;" [src]=imgsUrl[i]>
+            <h2 style="text-align: center">{{name}}</h2>
             <ion-row>
               <ion-col>
-                <button ion-button icon-start clear (click)="deleteItem()">
+                <button ion-button icon-start clear (click)="deleteItem(i)">
                   <ion-icon name="trash"></ion-icon>
                 </button>
               </ion-col>
             </ion-row>
           </ion-card>
         </ion-list>
-        <button ion-fab (click)="openScanPage()">Button</button>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col class="flexcontainer">
+        <button ion-fab (click)="openScanPage()">
+          <ion-icon name="add"></ion-icon>
+        </button>
       </ion-col>
     </ion-row>
   </ion-grid>
