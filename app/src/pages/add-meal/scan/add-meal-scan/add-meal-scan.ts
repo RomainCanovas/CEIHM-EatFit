@@ -1,8 +1,8 @@
 declare var require: any;
 
-import { Component } from '@angular/core';
-import {IonicPage, ModalController, NavController, NavParams} from 'ionic-angular';
-import { BarcodeScanner } from '@ionic-native/barcode-scanner';
+import {Component} from '@angular/core';
+import {AlertController, IonicPage, ModalController, NavController, NavParams} from 'ionic-angular';
+import {BarcodeScanner} from '@ionic-native/barcode-scanner';
 import {ScanResultsPage} from "../scan-results/scan-results";
 
 /**
@@ -24,23 +24,33 @@ export class AddMealScanPage {
 
   constructor(public navCtrl: NavController,
               public navParams: NavParams,
-              private barcodeScanner: BarcodeScanner) {
-    this.names=navParams.get("names");
-    this.imgsUrl=navParams.get("imgsUrl");
+              private barcodeScanner: BarcodeScanner,
+              private alertCtrl: AlertController) {
+    this.names = navParams.get("names");
+    this.imgsUrl = navParams.get("imgsUrl");
   }
 
 
   getProductInfo(barcode) {
     let req = new XMLHttpRequest();
-    req.open("GET", "https://fr.openfoodfacts.org/api/v0/produit/" + barcode.text + ".json" , false);
+    req.open("GET", "https://fr.openfoodfacts.org/api/v0/produit/" + barcode.text + ".json", false);
     req.send(null);
-    let jsonResult = JSON.parse(req.responseText);
-    let name = jsonResult.product.product_name;
-    let imgUrl = jsonResult.product.image_url;
-    this.names.push(name);
-    this.imgsUrl.push(imgUrl);
-    this.navCtrl.pop();
-    this.navCtrl.push(ScanResultsPage, { names: this.names, imgsUrl: this.imgsUrl });
+    try {
+      let jsonResult = JSON.parse(req.responseText);
+      let name = jsonResult.product.product_name;
+      let imgUrl = jsonResult.product.image_url;
+      this.names.push(name);
+      this.imgsUrl.push(imgUrl);
+      this.navCtrl.push(ScanResultsPage, {names: this.names, imgsUrl: this.imgsUrl});
+    } catch (e) {
+      let alert = this.alertCtrl.create({
+        title: 'Oups!',
+        subTitle: 'Ce code barre n\'est pas reconnu, veuillez rééssayer',
+        buttons: ['OK']
+      });
+      alert.present();
+      this.navCtrl.push(ScanResultsPage, {names: this.names, imgsUrl: this.imgsUrl});
+    }
   }
 
   ionViewDidLoad() {

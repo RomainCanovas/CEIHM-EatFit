@@ -7,7 +7,7 @@
 <ion-header>
 
   <ion-navbar color="primary">
-    <ion-title>Scan</ion-title>
+    <ion-title>Récapitulatif</ion-title>
   </ion-navbar>
 
 </ion-header>
@@ -19,15 +19,11 @@
       <ion-col style="text-align: center">
         <ion-list>
           <ion-card *ngFor="let name of names; let i = index">
-            <img margin-top="5px" style="object-fit: cover; width:170px; height:170px;" [src]=imgsUrl[i]>
-            <h2 style="text-align: center">{{name}}</h2>
-            <ion-row>
-              <ion-col>
-                <button ion-button icon-start clear (click)="deleteItem(i)">
-                  <ion-icon name="trash"></ion-icon>
-                </button>
-              </ion-col>
-            </ion-row>
+            <img margin-left="2px" margin-bottom="2px" margin-top="2px" align="left" style="object-fit: cover; width:auto; height:80px;" [src]=imgsUrl[i]>
+            <h2 margin-top="2px" style="text-align: center">{{name}}</h2>
+            <button margin-top="5px" ion-button icon-start clear (click)="deleteItem(i)">
+              <ion-icon name="trash"></ion-icon>
+            </button>
           </ion-card>
         </ion-list>
       </ion-col>
@@ -46,7 +42,7 @@
   <ion-toolbar>
     <ion-row>
       <ion-col style="text-align: center">
-        <button ion-button (click)="openMealDetails()">Valider</button>
+        <button ion-button round (click)="openMealDetails()">Valider</button>
       </ion-col>
     </ion-row>
   </ion-toolbar>
