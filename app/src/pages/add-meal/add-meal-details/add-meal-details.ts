@@ -15,6 +15,7 @@ export class AddMealDetailsPage {
 
   constructor(public navCtrl: NavController, public navParams: NavParams, public toastCtrl: ToastController) {
     this.name = navParams.get('tab');
+    if(!this.name) this.name = ['poulet','riz']
     for (let i = 0; i < this.name.length; i++) {
       this.weight.push(100);
     }

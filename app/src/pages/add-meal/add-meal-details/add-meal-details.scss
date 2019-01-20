@@ -2,6 +2,10 @@ page-add-meal-details {
 
 }
 
+.btm{
+  margin-top:30px;
+}
+
 .weight-selector p{
   font-size:17px;
   vertical-align: middle;
@@ -16,4 +20,69 @@ img {
   width: 50%;
   max-width: 100%;
   height: auto;
+}
+
+.intro {
+  font-size:15px;
+  text-align: center;
+  color:#272727;
+  margin: 10px 10px 25px;
+}
+
+.chrt{
+  width:80%;
+  margin-top:30px;
+}
+
+.itm{
+
+  font-size:16px;
+  padding:10px;
+  border-right: 1px solid #dedede;
+  border-left: 1px solid #dedede;
+
+  &:first-child{
+    border-top:1px solid #dedede;
+  }
+
+  .icone{
+
+    img{
+      width:60%;
+      opacity: 0.7;
+    }
+  }
+
+  .food{
+    text-transform: capitalize;
+    vertical-align: middle;
+    color: #404040;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  .bar{
+
+    text-align: center;
+
+    button{
+      display:inline;
+      width:25px;
+      height:25px;
+      vertical-align: middle;
+      border-radius: 50%;
+      background-color: #77ACA2;
+      color:#f2F2f2;
+    }
+
+    span{
+      margin:0 7px;
+      font-weight: 500;
+    }
+
+
+
+
+  }
 }

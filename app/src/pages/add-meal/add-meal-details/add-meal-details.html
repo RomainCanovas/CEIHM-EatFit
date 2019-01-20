@@ -1,44 +1,45 @@
 <ion-header>
 
   <ion-navbar color="primary">
-    <ion-title>Détails</ion-title>
+    <ion-title>Récapitulatif</ion-title>
   </ion-navbar>
 
 </ion-header>
 
 
 <ion-content padding>
-  <h1 style="text-align: center; font-weight: bold">DETAILS DU REPAS</h1>
-  <ion-list>
-    <ion-item *ngFor="let n of name; let i = index">
-      <ion-icon name="square" style="color: black; font-size: 20px;"></ion-icon>
-      {{ n }}
-      <div class="weight-selector" text-center>
-        <ion-row class="row">
-          <div col-3></div>
-          <button col-1 ion-button icon-only (click)="decreaseWeight(i)" style="background-color: white;">
-            <ion-icon name="remove"
-                      style="color: black; font-size: 20px; border: 10px black; font-weight: bold"></ion-icon>
-          </button>
-          <p col-4>{{weight[i]}} g</p>
-          <button col-1 ion-button icon-only (click)="increaseWeight(i)" style="background-color: white;">
-            <ion-icon name="add"
-                      style="color: black; font-size: 20px; border: 10px black; font-weight: bold"></ion-icon>
-          </button>
-          <div col-3></div>
-        </ion-row>
+  <div class="intro">
+    <i> {{name.length}} élément{{name.length == 1 ? "" : "s"}} compose{{name.length == 1 ? "" : "nt"}} votre repas : </i>
+  </div>
+  <div *ngFor="let n of name; let i = index" class="itm">
+
+
+    <ion-row>
+
+      <div col-2 class="icone">
+        <img src="https://img.icons8.com/metro/1600/fork.png"/>
       </div>
-    </ion-item>
-  </ion-list>
-  <img src="assets/imgs/chart.png">
+
+      <div col-5 class="food">
+        {{n}}
+      </div>
+
+      <div col-5 class="bar">
+        <button (click)="decreaseWeight(i)" (press)="decreaseWeight(i)">
+          -
+        </button>
+        <span id="gg">{{weight[i]}} g</span>
+        <button (click)="increaseWeight(i)" (press)="increaseWeight(i)">
+          +
+        </button>
+      </div>
+    </ion-row>
+
+
+  </div>
+  <div text-center class="btm">
+    <button ion-button (click)="goToRoot()">Valider</button>
+  </div>
+  <img class="chrt" src="assets/imgs/chart2.png">
 </ion-content>
 
-<ion-footer>
-  <ion-toolbar>
-    <ion-row>
-      <ion-col style="text-align: center">
-        <button ion-button (click)="goToRoot()">Valider</button>
-      </ion-col>
-    </ion-row>
-  </ion-toolbar>
-</ion-footer>
