@@ -15,6 +15,9 @@
 
 <ion-content padding>
 
+  <div class="backdrop" *ngIf="addClick" (click)="addClick = false"></div>
+
+
   <div class="rond" text-center>
     <h1>{{kcal}}</h1>
     <p>KCal
@@ -77,7 +80,8 @@
     </table>
 
   </div>
-  <ion-item-divider></ion-item-divider>
+
+  <div class="separator"></div>
 
   <div text-center margin-top class="add">
     <button ion-button icon-start (click)="openAddMealChoicePicker()" round color="primary" class="pop"

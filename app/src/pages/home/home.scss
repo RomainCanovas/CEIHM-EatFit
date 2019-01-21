@@ -5,7 +5,7 @@
 .pop{animation:pop .4s cubic-bezier(.39,.575,.565,1.000) both}
 @keyframes pop{0%{transform:scale(.5)}100%{transform:scale(1)}}
 
-.popf{animation:pop .2s cubic-bezier(.39,.575,.565,1.000) both}
+.popf{animation:pop .17s cubic-bezier(.39,.575,.565,1.000) both}
 @keyframes pop{0%{transform:scale(.5)}100%{transform:scale(1)}}
 
 
@@ -128,4 +128,21 @@
 .itm button{
   width:40px;
   font-size:12px;
+}
+
+.separator{
+  width:100%;
+  border-bottom: 1px solid #dedede;
+  margin:15px 0;
+}
+
+.backdrop{
+  z-index:2;
+  position: absolute;
+  left:0;
+  top:0;
+  width:100%;
+  height:100%;
+  background-color: #516369;
+  opacity:0.3;
 }
