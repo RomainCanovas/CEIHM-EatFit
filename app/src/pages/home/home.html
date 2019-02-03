@@ -25,17 +25,23 @@
   </div>
 
   <div class="date-switch" text-center>
+
+    <button ion-button clear icon-only color="secondary" (click)="dateMinus()">
+      <ion-icon name="ios-arrow-back"></ion-icon>
+    </button>
+    <span>{{currentDay.format('dddd D MMMM')}}</span>
+    <button ion-button clear icon-only color="secondary" (click)="datePlus()">
+      <ion-icon name="ios-arrow-forward"></ion-icon>
+    </button>
+    <!--
+
     <ion-row class="row">
-      <div col-3></div>
-      <button col-1 ion-button clear icon-only color="secondary">
-        <ion-icon name="ios-arrow-back"></ion-icon>
-      </button>
-      <p col-4>Aujourd'hui</p>
-      <button col-1 ion-button clear icon-only color="secondary">
-        <ion-icon name="ios-arrow-forward"></ion-icon>
-      </button>
-      <div col-3></div>
+
+
+
     </ion-row>
+
+    -->
   </div>
 
   <div class="data">
@@ -91,22 +97,22 @@
     </button>
     <div *ngIf="addClick">
       <div class="fabino fab1">
-        <button ion-button round color="secondary" block (click)="openAddMeal()" class="popf">
+        <button ion-button round color="secondary" block (click)="openAddMeal('breakfast')" class="popf">
           Petit déjeuner
         </button>
       </div>
       <div class="fabino fab2">
-        <button ion-button round color="secondary" block (click)="openAddMeal()" class="popf">
+        <button ion-button round color="secondary" block (click)="openAddMeal('launch')" class="popf">
           Déjeuner
         </button>
       </div>
       <div class="fabino fab3">
-        <button ion-button round color="secondary" block (click)="openAddMeal()" class="popf">
+        <button ion-button round color="secondary" block (click)="openAddMeal('dinner')" class="popf">
           Dîner
         </button>
       </div>
       <div class="fabino fab4">
-        <button ion-button round color="secondary" block (click)="openAddMeal()" class="popf">
+        <button ion-button round color="secondary" block (click)="openAddMeal('other')" class="popf">
           Autre repas
         </button>
       </div>
@@ -119,11 +125,18 @@
       <ion-item class="itm">
         <h2>Petit déjeuner<span class="detail">? / 1000 Kcal</span></h2>
         <ion-row>
-          <h3 col-9>Non renseigné</h3>
-          <div col-3 text-right>
+          <h3 col-9>{{breakfast ? getFoodResume(breakfast) : 'Non renseigné'}}</h3>
+          <div col-3 text-right *ngIf="!breakfast">
             <ion-buttons>
-              <button ion-button icon-only (click)="openAddMeal()" round color="secondary" class="pop">
+              <button ion-button icon-only (click)="openAddMeal('breakfast')" round color="secondary" class="pop">
                 <ion-icon name="add"></ion-icon>
+              </button>
+            </ion-buttons>
+          </div>
+          <div col-3 text-right *ngIf="breakfast">
+            <ion-buttons>
+              <button ion-button icon-only round color="secondary" class="pop">
+                <ion-icon name="options"></ion-icon>
               </button>
             </ion-buttons>
           </div>
@@ -132,8 +145,15 @@
       <ion-item class="itm">
         <h2>Déjeuner<span class="detail">1730 / 2000 Kcal</span></h2>
         <ion-row>
-          <h3 col-9>Coquillettes Jambon</h3>
-          <div col-3 text-right>
+          <h3 col-9>{{lunch ? getFoodResume(lunch) : 'Non renseigné'}}</h3>
+          <div col-3 text-right *ngIf="!lunch">
+            <ion-buttons>
+              <button ion-button icon-only (click)="openAddMeal('lunch')" round color="secondary" class="pop">
+                <ion-icon name="add"></ion-icon>
+              </button>
+            </ion-buttons>
+          </div>
+          <div col-3 text-right *ngIf="lunch">
             <ion-buttons>
               <button ion-button icon-only round color="secondary" class="pop">
                 <ion-icon name="options"></ion-icon>
@@ -145,8 +165,15 @@
       <ion-item class="itm">
         <h2>Diner<span class="detail">870 / 950 Kcal</span></h2>
         <ion-row>
-          <h3 col-9>Soupe au pistou</h3>
-          <div col-3 text-right>
+          <h3 col-9>{{dinner ? getFoodResume(dinner) : 'Non renseigné'}}</h3>
+          <div col-3 text-right *ngIf="!dinner">
+            <ion-buttons>
+              <button ion-button icon-only (click)="openAddMeal('dinner')" round color="secondary" class="pop">
+                <ion-icon name="add"></ion-icon>
+              </button>
+            </ion-buttons>
+          </div>
+          <div col-3 text-right *ngIf="dinner">
             <ion-buttons>
               <button ion-button icon-only round color="secondary" class="pop">
                 <ion-icon name="options"></ion-icon>

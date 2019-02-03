@@ -18,6 +18,7 @@ import {UpdateWeightPage} from "../pages/weight/update-weight/update-weight";
 import {BarcodeScanner} from '@ionic-native/barcode-scanner';
 import {ScanResultsPage} from "../pages/add-meal/scan/scan-results/scan-results";
 import { SpeechRecognition } from '@ionic-native/speech-recognition';
+import { BouffeProvider } from '../providers/bouffe/bouffe';
 
 
 @NgModule({
@@ -59,7 +60,8 @@ import { SpeechRecognition } from '@ionic-native/speech-recognition';
     SplashScreen,
     SpeechRecognition,
     BarcodeScanner,
-    {provide: ErrorHandler, useClass: IonicErrorHandler}
+    {provide: ErrorHandler, useClass: IonicErrorHandler},
+    BouffeProvider
   ]
 })
 export class AppModule {}

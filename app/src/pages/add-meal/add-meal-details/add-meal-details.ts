@@ -3,6 +3,7 @@ import {HomePage} from "../../home/home";
 declare var require: any
 import {Component} from '@angular/core';
 import {IonicPage, NavController, NavParams, ToastController} from 'ionic-angular';
+import {BouffeProvider} from "../../../providers/bouffe/bouffe";
 
 @IonicPage()
 @Component({
@@ -13,13 +14,15 @@ export class AddMealDetailsPage {
   name: string[] = [];
   weight: any[] = [];
 
-  constructor(public navCtrl: NavController, public navParams: NavParams, public toastCtrl: ToastController) {
+  constructor(public navCtrl: NavController, public navParams: NavParams, public toastCtrl: ToastController,
+              public bouffeP: BouffeProvider) {
+
     this.name = navParams.get('tab');
-    if(!this.name) this.name = ['poulet','riz']
+    if (!this.name) this.name = ['poulet', 'riz']
     for (let i = 0; i < this.name.length; i++) {
       this.weight.push(100);
     }
-    console.log(this.weight);
+
   }
 
 
@@ -32,6 +35,19 @@ export class AddMealDetailsPage {
   }
 
   goToRoot() {
+
+    let obj = {};
+    obj['foods'] = [];
+    for (let i = 0; i < this.name.length; i++) {
+      obj['foods'].push({
+        name : this.name[i],
+        quantity : this.weight[i]
+      });
+    }
+
+    this.bouffeP.addMeal(obj)
+
+
     this.presentToastCancel();
     this.navCtrl.setRoot(HomePage);
   }

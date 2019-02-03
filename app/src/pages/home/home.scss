@@ -62,13 +62,17 @@
 
 .date-switch{
   margin-top:15px;
+  margin-bottom: 15px;
 }
 
-.date-switch p{
-  font-size:17px;
+.date-switch button{
   vertical-align: middle;
-  margin:unset;
-  padding-top:13px;
+}
+
+.date-switch span{
+  font-size:18px;
+  text-transform: capitalize;
+  padding-top: -10px;
 }
 
 
