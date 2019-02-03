@@ -71,8 +71,6 @@ export class BouffeProvider {
         foods : obj.foods
       })
     }
-    console.log("MEALS")
-    console.log(this.meals)
   }
 
 

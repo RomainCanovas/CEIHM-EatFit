@@ -45,6 +45,7 @@ export class AddMealVocalPage {
   }
 
   start() {
+    this.init();
   this.error = false;
     this.speechRecognition.startListening()
       .subscribe(
@@ -58,7 +59,7 @@ export class AddMealVocalPage {
   }
 
   fake() {
-    this.text = "J'ai mangé du bon poulet avec du riz";
+    this.text = "J'ai mangé un bon poulet et des pates";
     this.sendRequest();
   }
 
@@ -80,11 +81,11 @@ export class AddMealVocalPage {
               this.navCtrl.push(AddMealDetailsPage, {tab: foods});
             else {
               this.error = true;
+
             }
           })
         }
       )
-      .then(res => console.log(res));
   }
 
   /*

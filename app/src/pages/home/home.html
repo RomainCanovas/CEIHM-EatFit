@@ -123,7 +123,10 @@
   <ion-card>
     <ion-list>
       <ion-item class="itm">
-        <h2>Petit déjeuner<span class="detail">? / 1000 Kcal</span></h2>
+        <h2>Petit déjeuner
+          <span class="detail" *ngIf="!breakfast">? / 1000 Kcal</span>
+          <span class="detail" *ngIf="breakfast">450 / 1000 Kcal</span>
+        </h2>
         <ion-row>
           <h3 col-9>{{breakfast ? getFoodResume(breakfast) : 'Non renseigné'}}</h3>
           <div col-3 text-right *ngIf="!breakfast">
@@ -143,7 +146,10 @@
         </ion-row>
       </ion-item>
       <ion-item class="itm">
-        <h2>Déjeuner<span class="detail">1730 / 2000 Kcal</span></h2>
+        <h2>Déjeuner
+          <span class="detail" *ngIf="!breakfast">? / 1000 Kcal</span>
+          <span class="detail" *ngIf="breakfast">800 / 1000 Kcal</span>
+        </h2>
         <ion-row>
           <h3 col-9>{{lunch ? getFoodResume(lunch) : 'Non renseigné'}}</h3>
           <div col-3 text-right *ngIf="!lunch">
@@ -163,7 +169,10 @@
         </ion-row>
       </ion-item>
       <ion-item class="itm">
-        <h2>Diner<span class="detail">870 / 950 Kcal</span></h2>
+        <h2>Diner
+          <span class="detail" *ngIf="!breakfast">? / 1000 Kcal</span>
+          <span class="detail" *ngIf="breakfast">700 / 1000 Kcal</span>
+        </h2>
         <ion-row>
           <h3 col-9>{{dinner ? getFoodResume(dinner) : 'Non renseigné'}}</h3>
           <div col-3 text-right *ngIf="!dinner">
